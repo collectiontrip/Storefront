@@ -38,14 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playground',
     'django',
-    'debug_toolbar',
     'store',
     'tags',
     'likes',
+    'debug_toolbar',
+    
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,8 +82,11 @@ WSGI_APPLICATION = 'storefront.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'storefront',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': 'Ravidoc1@1'
     }
 }
 
@@ -129,7 +133,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = [
-    # ...
+    
     "127.0.0.1",
-    # ...
+    
 ]
